@@ -1,13 +1,33 @@
 import React from 'react';
-import { UserButton } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
+import prisma from '@/lib/prisma';
 
-const Dashboard = () => {
+
+const Dashboard = async () => {
+  const user = await currentUser()
+  const creator = user?.firstName || ''
+  const categories = await prisma.category.findMany({
+    where: {
+      creator: creator
+    }
+  });
+
   return (
+   <section className="p-24 space-y-6 min-h-screen flex flex-col">
     <div>
-      <h1>Dashboard</h1>
-      <UserButton />
-      <p>Hello World</p>
+      Add Category
     </div>
+    {categories && categories.length > 0 ? (
+      <>
+      </>
+    ) : (
+      <>
+        <div>
+          Add a category today!
+        </div>
+      </>
+    )}
+   </section>
   )
 }
 
