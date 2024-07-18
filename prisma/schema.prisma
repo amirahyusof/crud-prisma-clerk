@@ -10,34 +10,44 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("MySQL_PRISMA_URL")
-  directUrl =  env("MYSQL_URL_NON_POOLING")
+  url = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
-
 
 
 model User {
   id Int @id @default(autoincrement())
   email String @unique
-  name String?
+  password String 
+  firstName String? @map("first_name")
+  lastName String? @map("last_name")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  activities Activity[]
 }
 
-model Product {
-  id Int @id @default(autoincrement())
-  name String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  category Category @relation(fields: [categoryId], references: [id])
-  categoryId Int
+// Define Activity model
+model Activity {
+  activity_id   Int       @id @default(autoincrement())
+  user          User      @relation(fields: [user_id], references: [id])
+  user_id       Int
+  activity_name String
+  description   String
+  date_time     DateTime
+  participants  Json      // Example of storing participants as JSON array
+  notes         String?
+
+  // Optional relation to Logs (if needed)
+  logs          Log[]     // One-to-Many relationship with Log
 }
 
-model Category {
-  id Int @id @default(autoincrement())
-  name String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  products Product[]
-  creator String?
+// Define Log model (optional)
+model Log {
+  log_id         Int       @id @default(autoincrement())
+  activity       Activity  @relation(fields: [activity_id], references: [activity_id])
+  activity_id    Int
+  log_date_time  DateTime
+  log_type       String    // e.g., feedback, completion status
+  log_message    String    // Details of the log entry
 }
