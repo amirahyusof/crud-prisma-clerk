@@ -1,15 +1,8 @@
-import React from 'react'
-import Header from '../_components/header';
+import React from 'react';
+import Layout from '@/app/(website)/_components/layout';
 
-const layout = (
-    {children} 
-    : Readonly<{children: React.ReactNode;}>) => {
-  return (
-    <div>
-        <Header />
-        {children}
-    </div>
-  )
-}
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+    return <Layout>{children}</Layout>;
+};
 
-export default layout
+export default DashboardLayout;
