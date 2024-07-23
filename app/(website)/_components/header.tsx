@@ -54,13 +54,10 @@ const Header = () => {
             </Link>
             <Link
               href="/activities"
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground"
             >
               <Castle className="h-5 w-5" />
               Activities
-              <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                6
-              </Badge>
             </Link>
             <Link
               href="/schedule"
@@ -87,7 +84,7 @@ const Header = () => {
 
           <div className="mt-auto p-4">
                 <div>
-                    <Link href="/settings" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary">
+                    <Link href="/settings" className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground transition-all ">
                         <Settings className="h-4 w-4" />
                         Setting
                     </Link>
