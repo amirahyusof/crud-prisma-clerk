@@ -8,14 +8,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import {
-  CircleUser,
+  Castle,
   Home,
   Menu,
+  MessageSquareHeart,
   Package,
-  ShoppingCart,
+  CalendarCheck,
+  Settings
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import React from 'react';
@@ -50,23 +53,46 @@ const Header = () => {
               Dashboard
             </Link>
             <Link
-              href="/orders"
+              href="/activities"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
             >
-              <ShoppingCart className="h-5 w-5" />
-              Orders
+              <Castle className="h-5 w-5" />
+              Activities
               <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                 6
               </Badge>
             </Link>
             <Link
-              href="/products"
+              href="/schedule"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <CalendarCheck className="h-5 w-5" />
+              Schedule
+            </Link>
+            <Link
+              href="/logs"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <MessageSquareHeart className="h-5 w-5" />
+              Logs
+            </Link>
+            <Link
+              href="/profile"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
             >
               <Package className="h-5 w-5" />
-              Products
+              Profile
             </Link>
           </nav>
+
+          <div className="mt-auto p-4">
+                <div>
+                    <Link href="/settings" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary">
+                        <Settings className="h-4 w-4" />
+                        Setting
+                    </Link>
+                </div>
+            </div>
         </SheetContent>
       </Sheet>
       <div className="w-full flex-1">
@@ -75,7 +101,7 @@ const Header = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
-            <CircleUser className="h-5 w-5" />
+            <UserButton />
             <span className="sr-only">Toggle user menu</span>
           </Button>
         </DropdownMenuTrigger>
