@@ -15,7 +15,7 @@ const HomePage = async () => {
   
   return (
     <section className="py-6">
-      <div className='mt-8 w-[600px] h-[800px] border rounded-xl mx-auto'>
+      <div className='mt-8 w-[600px] h-screen border rounded-xl mx-auto'>
         <div className='text-center mx-auto py-12 px-4 ms:px-4 lg:py-16 lg:px-8' >
           <h1 className='text-2xl font-extrabold text-gray-700 sm:text-xl'>Parent-Child Activity Tracker</h1>
           <p className='my-2 text-xl text-gray-500 sm:text-md'>
