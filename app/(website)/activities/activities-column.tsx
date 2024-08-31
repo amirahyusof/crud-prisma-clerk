@@ -2,7 +2,7 @@
 
 import { DataTableColumnHeader } from "@/components/column-header";
 import { ColumnDef } from "@tanstack/react-table";
-import { DeleteButton, EditButton, ViewButton } from "../_components/activities-button";
+import { DeleteButton, EditButton, ViewButton } from "../../../components/ui/activity/activities-button";
 
 type Activity = {
   id: number

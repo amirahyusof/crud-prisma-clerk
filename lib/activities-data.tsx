@@ -40,3 +40,26 @@ export const activitiesData = [
     completedAt: "2024-10-05"
   },
 ]
+
+export const Participants = [
+  {
+    id: 1, 
+    name: "Aminah", 
+    title: "mom"
+  },
+  {
+    id: 2, 
+    name: "Aiman", 
+    title: "dad"
+  },
+  {
+    id: 3, 
+    name: "Aidil", 
+    title: "son"
+  },
+  {
+    id: 4, 
+    name: "Lily", 
+    title: "daughter"
+  },
+]

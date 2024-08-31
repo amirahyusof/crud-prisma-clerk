@@ -6,8 +6,9 @@ export function CreateTask(){
   return(
     <div>
       <Button asChild>
-        <Link href="">
-          <PlusIcon /> 
+        <Link href="/activities/create">
+          <PlusIcon />
+          <span className="hidden md:block">Create Invoice</span>{' '} 
           Create New Task
         </Link>
       </Button>
@@ -19,7 +20,7 @@ export function ViewButton(){
   return(
     <div>
       <Button asChild>
-        <Link href="">Update</Link>
+        <Link href="">View</Link>
       </Button>
     </div>
   )
@@ -38,7 +39,7 @@ export function EditButton(){
 export function DeleteButton(){
   return(
     <div>
-      <Button asChild>
+      <Button variant="destructive" asChild>
         <Link href="">Delete</Link>
       </Button>
     </div>

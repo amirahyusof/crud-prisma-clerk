@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { CreateActivity } from "./add-form";
+import FormActivity from "./add-form";
+import { Participants } from "@/lib/activities-data";
 
-export default function NewTask(){
+export default async function NewTask(){
+  const participants = Participants
   return(
     <section>
       <div>
@@ -10,7 +12,7 @@ export default function NewTask(){
       </div>
 
       <Card className="mt-4 p-4 border rounded-lg">
-        <CreateActivity />
+        <FormActivity participants = {participants} />
       </Card>
     </section>
   )

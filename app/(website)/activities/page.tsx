@@ -2,12 +2,12 @@ import React from "react"
 import { ActivitiesDataTable } from "./activities-dataTable"
 import { ActivityColumns } from "./activities-column"
 import { activitiesData } from '@/lib/activities-data';
-import { CreateTask } from "../_components/activities-button";
+import CreateTask from "@/components/ui/activity/activities-button";
 
 
 
 export default async function Activities(){
-  const data = activitiesData
+  const data = activitiesData;
 
   return (
     <section>
