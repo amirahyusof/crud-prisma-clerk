@@ -9,6 +9,7 @@ export type ActivityForm = {
   activityName: string;
   description: string;
   participants: string;
-  status: 'new'| 'on progress'|'completed'
+  status: 'new'| 'on progress'|'completed';
+  notes: string;
 
 }

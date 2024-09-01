@@ -2,7 +2,7 @@ import React from "react"
 import { ActivitiesDataTable } from "./activities-dataTable"
 import { ActivityColumns } from "./activities-column"
 import { activitiesData } from '@/lib/activities-data';
-import CreateTask from "@/components/ui/activity/activities-button";
+import { CreateTask } from "@/components/ui/activity/activities-button";
 
 
 

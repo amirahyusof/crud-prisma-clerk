@@ -6,7 +6,7 @@ import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import { useActionState } from "react";
 import { createActivity, State } from "@/lib/action";
-import { Participants } from "@/lib/definitions";
+import { ActivityForm, Participants } from "@/lib/definitions";
 import Link from "next/link";
 import {
   BellAlertIcon,
@@ -24,7 +24,13 @@ const formSchema = z.object({
   notes: z.string().optional()
 })
 
-export default function FormActivity({participants}: {participants: Participants[]}){
+export default function EditForm({
+  activity,
+  participants
+}: {
+  activity: ActivityForm;
+  participants: Participants[];
+}){
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,7 +58,7 @@ export default function FormActivity({participants}: {participants: Participants
               <input 
               id="activityName"
               name="activity"
-              type="string"
+              defaultValue={activity.activityName}
               placeholder="Activity Name"
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
@@ -70,7 +76,7 @@ export default function FormActivity({participants}: {participants: Participants
               <input 
               id="description"
               name="description"
-              type="string"
+              defaultValue={activity.description}
               placeholder="Description of activity"
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
@@ -88,7 +94,7 @@ export default function FormActivity({participants}: {participants: Participants
               id="participants"
               name="participants"
               className="peer block w-full cursor-pointer rounded-md bordrer  border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue=""
+              defaultValue={activity.id}
             >
               <option value="" disabled>
                  select a participant
@@ -116,6 +122,7 @@ export default function FormActivity({participants}: {participants: Participants
                  name="status"
                  type="radio"
                  value="new"
+                 defaultChecked = {activity.status === 'new'}
                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -132,6 +139,7 @@ export default function FormActivity({participants}: {participants: Participants
                  name="status"
                  type="radio"
                  value="on progress"
+                 defaultChecked = {activity.status === 'on progress'}
                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -148,6 +156,7 @@ export default function FormActivity({participants}: {participants: Participants
                  name="status"
                  type="radio"
                  value="completed"
+                 defaultChecked = {activity.status === 'completed'}
                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -171,7 +180,7 @@ export default function FormActivity({participants}: {participants: Participants
               <input 
               id="note"
               name="note"
-              type="string"
+              defaultValue={activity.notes}
               placeholder="Notes for activity"
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
@@ -199,7 +208,7 @@ export default function FormActivity({participants}: {participants: Participants
         
         
         <div className="mt-6 flex justify-end gap-4">
-          <Button type="submit">Create Activity</Button>
+          <Button type="submit">Edit Activity</Button>
           <Link 
             href="/activities"
             className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
