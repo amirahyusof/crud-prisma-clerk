@@ -11,6 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import DisplayCharts from './charts';
+import { CreateTask } from '@/components/ui/activity/activities-button';
 
 
 const Dashboard = async () => {
@@ -35,7 +36,7 @@ const Dashboard = async () => {
   return (
     <section className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
       <div className="flex items-center">
-        <Button>Create New Task</Button>
+        <CreateTask />
       </div>
 
       <div className="grid lg:grid-cols-3 gap-4">
