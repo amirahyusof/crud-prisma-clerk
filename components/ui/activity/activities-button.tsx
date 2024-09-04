@@ -45,3 +45,13 @@ export function DeleteButton(){
     </div>
   )
 }
+
+export function FeedbackButton(){
+  return(
+    <div>
+      <Button asChild>
+        <Link href="/logs/feedback">Feedback</Link>
+      </Button>
+    </div>
+  )
+}
