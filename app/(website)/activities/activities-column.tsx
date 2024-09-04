@@ -57,5 +57,4 @@ export const ActivityColumns: ColumnDef<Activity>[] = [
       )
     }
   }
-
 ]
