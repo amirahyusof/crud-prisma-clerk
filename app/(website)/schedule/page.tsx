@@ -14,7 +14,7 @@ export default async function Schedule(){
       </div>
 
  
-      <div className="flex justify-end mb-6">
+      <div className="absolute top-28 right-0 mb-2 mr-4">
         <CreateTask />
       </div>
       
@@ -25,8 +25,6 @@ export default async function Schedule(){
         <div className="basis-1/2"> 
           <Display />
         </div>
-        
-        
       </div>
       
       
