@@ -8,7 +8,7 @@ export function CreateTask(){
       <Button asChild>
         <Link href="/activities/create">
           <PlusIcon />
-          <span className="hidden md:block">Create Invoice</span>{' '} 
+          <span className="hidden md:block"></span>{' '} 
           Create New Task
         </Link>
       </Button>
