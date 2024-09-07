@@ -2,9 +2,9 @@
 
 import { DataTableColumnHeader } from "@/components/column-header";
 import { ColumnDef } from "@tanstack/react-table";
-import { DeleteButton, EditButton, ViewButton } from "@/components/ui/activity/activities-button";
 
-type Activity = {
+
+type Display = {
   id: number
   status: string
   activity: string
@@ -13,7 +13,7 @@ type Activity = {
   completedAt: string
 }
 
-export const ActivityColumns: ColumnDef<Activity>[] = [
+export const DisplayColumns: ColumnDef<Display>[] = [
   {
     accessorKey: "id",
     header: "Id"
@@ -36,25 +36,4 @@ export const ActivityColumns: ColumnDef<Activity>[] = [
     accessorKey: "type",
     header: "Type"
   },
-  {
-    accessorKey: "createdAt",
-    header: "Date"
-  },
-  {
-    accessorKey: "completedAt",
-    header: "Completed Date"
-  }, 
-  {
-    accessorKey: "action", 
-    header: "Action",
-    cell: ({ row }) => {
-      return(
-        <div className="flex mx-auto justify-center gap-4">
-          <ViewButton />
-          <EditButton />
-          <DeleteButton />
-        </div>
-      )
-    }
-  }
 ]
