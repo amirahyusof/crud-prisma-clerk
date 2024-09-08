@@ -13,23 +13,15 @@ const HomePage = async () => {
   }
 
   return (
-    <section>
-      <div className='relative bg-[#ffcc99] mt-8 w-[500px] h-[650px] border rounded-xl mx-auto'>
-        <Image 
-          src={image}
-          width={450}
-          height={350}
-          alt='illustration'
-          loading='lazy'
-          className="mx-auto object-cover rounded-xl"
-        />
-        <div className='absolute top-[90%] left-3/4 transform -translate-x-3/4 -translate-y-3/4  text-center w-full px-4 sm:px-8'>
-          <h1 className='text-2xl font-extrabold text-gray-700 sm:text-xl'>Parent-Child Activity Tracker</h1>
-          <p className='my-2 text-xl sm:text-md'>
+    <section className='relative w-full border lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]'>
+      <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-opacity-60 bg-black lg:relative lg:bg-transparent lg:p-0'>
+        <div className='mx-auto grid w-[350px] gap-6 text-white lg:text-gray-700'>
+          <h1 className='text-3xl font-extrabold sm:text-xl'>Parent-Child Activity Tracker</h1>
+          <p className='my-2 text-xl sm:text-md text-balance'>
             Enhance family bonding by planning and tracking activities together. 
             Sign up now to start creating memorable moments with your loved ones.
           </p>
-          <div className="mt-2 w-full flex justify-center gap-6">
+          <div className='grid gap-2 text-center'>
             <Button className='bg-[#89CFF0] text-white font-bold text-lg'>
               <Link href={'/sign-in'}>
                 Log In
@@ -42,6 +34,16 @@ const HomePage = async () => {
             </Button>
           </div>
         </div>
+      </div>
+      <div className="lg:block">
+        <Image 
+          src={image}
+          width={450}
+          height={350}
+          alt='illustration'
+          loading='lazy'
+          className="h-full w-full object-cover"
+        />
       </div>
     </section>
   )
