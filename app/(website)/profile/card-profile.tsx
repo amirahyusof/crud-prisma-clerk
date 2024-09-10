@@ -1,9 +1,11 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import ActivitySummary from "./activity-summary";
 
 
-export default async function CardProfile(){
+export default function CardProfile(){
   return(
     <section>
       {/*Profile Header*/}

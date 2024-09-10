@@ -1,7 +1,11 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
-export default async function EditProfile({participants} :{participants: Participants[];}){
+export default function EditProfile({participants} :{participants: Participants[];}){
   return(
     <section>
       {/*Personal information section*/}
