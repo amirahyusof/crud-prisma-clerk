@@ -43,7 +43,7 @@ const Dashboard = async () => {
         {/* Today's Progress Summary */}
       <Card className="col-span-1">
         <CardHeader>
-          <CardTitle>Today's Progress Summary</CardTitle>
+          <CardTitle>Today Progress Summary</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="mb-8">5 Tasks</p>
@@ -84,7 +84,7 @@ const Dashboard = async () => {
       {/* Today's Tasks */}
       <div className="w-full">
         <div className="flex justify-between">
-          <h2>Today's Task</h2>
+          <h2>Today Task</h2>
           <p className="cursor-pointer">See All</p>
         </div>
         <div className="grid lg:grid-cols-3 gap-6">

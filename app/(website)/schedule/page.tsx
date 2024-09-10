@@ -10,7 +10,7 @@ export default async function Schedule(){
     <section>
       <div>
         <h1 className="text-2xl">Activity Schedule</h1>
-        <p className="font-medium mb-6">View and manage your family's activity calender</p>
+        <p className="font-medium mb-6">View and manage your family activity calender</p>
       </div>
 
  
