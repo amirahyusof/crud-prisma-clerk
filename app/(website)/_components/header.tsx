@@ -1,12 +1,4 @@
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -20,7 +12,6 @@ import {
   CalendarCheck,
   Settings
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import React from 'react';
 
 const Header = () => {
@@ -92,6 +83,7 @@ const Header = () => {
             </div>
         </SheetContent>
       </Sheet>
+
       <div className="w-full flex-1">
         <h1>My Family Dashboard</h1>
       </div>
